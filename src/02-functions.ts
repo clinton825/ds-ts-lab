@@ -80,3 +80,20 @@ function sortColleagues(
   console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length),1));
   console.log(sortColleagues(colleagues.current, (a, b) => (a.name.length - b.name.length))); // NEW
   
+  function addInterest(friend: Friend, interest: string): string[] {
+    // Initialize the interests array if it doesn't exist
+    if (!friend.interests) {
+        friend.interests = [];
+    }
+
+    // Add the interest if it's not already in the array
+    if (!friend.interests.includes(interest)) {
+        friend.interests.push(interest);
+    }
+
+    // Return the updated interests array
+    return friend.interests;
+}
+
+// Testing:
+console.log(addInterest(friends[0], 'Politics', ));  
